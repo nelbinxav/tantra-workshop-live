@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playbook Review Notes</title>
+<meta name="description" content="Nelbin's section-by-section review log for the 3-Day AI RevOps Workshop: findings, verdicts, tickets and what is still to review.">
+<style>
+  :root{--bg:#fafafa;--fg:#161616;--muted:#5d5d5d;--line:#e2e2e2;--card:#fff;--cut:#b42318;--keep:#067647;--rw:#b54708;--flag:#5b2fb3;--tag:#eef0f3}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111214;--fg:#ececec;--muted:#9a9a9a;--line:#2a2b2e;--card:#18191c;--cut:#f97066;--keep:#4ade80;--rw:#fdb022;--flag:#b692f6;--tag:#232529}}
+  :root[data-theme="dark"]{--bg:#111214;--fg:#ececec;--muted:#9a9a9a;--line:#2a2b2e;--card:#18191c;--cut:#f97066;--keep:#4ade80;--rw:#fdb022;--flag:#b692f6;--tag:#232529}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+  main{max-width:900px;margin:0 auto;padding:32px 16px 64px}
+  h1{font-size:28px;margin:0 0 4px}
+  .sub{color:var(--muted);margin:0 0 28px}
+  h2{font-size:19px;margin:36px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 12px}
+  .note header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
+  .note h3{font-size:16px;margin:0;flex:1 1 240px}
+  .v{font-size:12px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border-radius:999px;border:1px solid currentColor}
+  .CUT{color:var(--cut)} .KEEP{color:var(--keep)} .REWRITE{color:var(--rw)} .FLAG{color:var(--flag)}
+  .tag{font-size:12px;color:var(--muted);background:var(--tag);padding:2px 8px;border-radius:6px}
+  .note p{margin:6px 0}
+  .note ul{margin:6px 0 0 18px;padding:0}
+  .meta{font-size:13px;color:var(--muted)}
+  a{color:inherit}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;color:var(--muted);font-weight:600}
+  .todo{color:var(--muted)}
+  code{font-size:14px;background:var(--tag);padding:1px 5px;border-radius:4px}
+  @media (max-width:600px){table,thead,tbody,tr,th,td{display:block} thead{display:none} td{border:0;padding:3px 0} tr{border-bottom:1px solid var(--line);padding:8px 0}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Playbook Review Notes</h1>
+  <p class="sub">Nelbin · scope: outreach up to the landing page · flow: Nelbin → Aquila → Bhaskar → Adi · started 2026-09-29</p>
+  <p class="meta">Verdict key: <span class="v CUT">CUT</span> remove it · <span class="v KEEP">KEEP</span> passes as is · <span class="v REWRITE">REWRITE</span> keep the intent, redo the copy · <span class="v FLAG">FLAG</span> not copy, a launch or process issue. Every entry is also logged in Adi's <a href="https://adisuja.github.io/tantra-workshop-live/#review">review hub</a>.</p>
+
+  <h2>Findings</h2>
+
+  <article class="note">
+    <header>
+      <h3>Workshop success page · VSL player</h3>
+      <span class="v FLAG">FLAG</span>
+      <span class="tag">/site/workshop/success/</span>
+      <span class="tag">T-060</span>
+    </header>
+    <p>The video is a placeholder: <code>VSL_SRC</code> is empty, so the player shows a stock stage photo with the approved script running as a caption track. The line under the player, "Caption track is the approved script. The recording drops into this player unchanged.", is an internal team note.</p>
+    <ul>
+      <li>Correct on the review copy. Adi's brief says placeholders must stay visibly marked.</li>
+      <li>Must not ship: remove the note and the placeholder player before publish, or hide both until <code>VSL_SRC</code> is set.</li>
+      <li>T-060 (record VSL, on hold with Adi) is now a launch blocker. This is the first page after sign-up on the free lane, and Day 1 is 30 Sep.</li>
+    </ul>
+    <p class="meta">2026-09-29 · logged as Request changes</p>
+  </article>
+
+  <article class="note">
+    <header>
+      <h3>VSL script depends on the community group</h3>
+      <span class="v FLAG">FLAG</span>
+      <span class="tag">/site/workshop/success/</span>
+      <span class="tag">T-040 · T-041</span>
+    </header>
+    <p>The script says every build sheet and session link is sent through the community group, and the join button points there. The WhatsApp group is still a placeholder. If the group is not live by Wednesday, attendees have no path to the session links.</p>
+    <p class="meta">2026-09-29 · raised with Adi</p>
+  </article>
+
+  <article class="note">
+    <header>
+      <h3>Review copy fork and live link</h3>
+      <span class="v KEEP">KEEP</span>
+      <span class="tag">setup</span>
+    </header>
+    <p>Fork at <a href="https://github.com/nelbinxav/tantra-workshop-live">nelbinxav/tantra-workshop-live</a>, live at <a href="https://nelbinxav.github.io/tantra-workshop-live/">nelbinxav.github.io/tantra-workshop-live</a>. The Pages workflow was switched from Jekyll to a static upload, because Jekyll dropped <code>site/_next</code> and the onboarding centre loaded without scripts. Source edits still need access to the private repo (T-146).</p>
+    <p class="meta">2026-09-29</p>
+  </article>
+
+  <h2>Day 1 checklist, in review order</h2>
+  <table>
+    <thead><tr><th>Section</th><th>Link</th><th>Verdict</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Onboarding · Day 1 module</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#m-day1">#m-day1</a></td><td class="todo">pending</td><td class="todo">Title "Decide What You Sell, and Who To" flagged by Adi as slop.</td></tr>
+      <tr><td>Onboarding · Mechanism picker</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#d1-mechanism">#d1-mechanism</a></td><td class="todo">pending</td><td></td></tr>
+      <tr><td>Playbook · Day 1 (value equation)</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/playbook.html#d1">#d1</a></td><td class="todo">pending</td><td class="todo">Currently a diagram only, no steps.</td></tr>
+      <tr><td>Guide · S1 overview</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#g-s1-overview">#g-s1-overview</a></td><td class="todo">pending</td><td></td></tr>
+      <tr><td>Guide · Cold calendar</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#g-s1-cold-calendar">#g-s1-cold-calendar</a></td><td class="todo">pending</td><td></td></tr>
+      <tr><td>Guide · Cold email</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#g-s1-cold-email">#g-s1-cold-email</a></td><td class="todo">pending</td><td></td></tr>
+      <tr><td>Guide · LinkedIn</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#g-s1-linkedin">#g-s1-linkedin</a></td><td class="todo">pending</td><td></td></tr>
+      <tr><td>Playbook · Start</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/playbook.html#start">#start</a></td><td class="todo">pending</td><td></td></tr>
+      <tr><td>Playbook · RevOps</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/playbook.html#revops">#revops</a></td><td class="todo">pending</td><td></td></tr>
+      <tr><td>Playbook · Why funnel</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/playbook.html#whyfunnel">#whyfunnel</a></td><td class="todo">pending</td><td></td></tr>
+      <tr><td>Playbook · Funnels</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/playbook.html#funnels">#funnels</a></td><td class="todo">pending</td><td></td></tr>
+      <tr><td>Playbook · Big picture</td><td><a href="https://nelbinxav.github.io/tantra-workshop-live/playbook.html#bigpic">#bigpic</a></td><td class="todo">pending</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Day 1 test for every block</h2>
+  <p>Can an attendee do this step in the next 30 minutes with only what is on screen? If not, it is CUT or REWRITE. The five Day 1 outcomes every block must serve: offer and positioning · value equation · buyer persona · prospect list · channel and Cloudflare connections.</p>
+</main>
+</body>
+</html>
