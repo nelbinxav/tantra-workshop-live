@@ -78,6 +78,50 @@
     <p class="meta">2026-09-29</p>
   </article>
 
+  <h2>Daily sync · 2026-09-29 · what changed for this scope</h2>
+
+  <article class="note">
+    <header><h3>Onboarding centre is the single blocker. Scope is wider than "cut slop".</h3><span class="v REWRITE">REWRITE</span><span class="tag">Day 0–3</span></header>
+    <ul>
+      <li>Every task in this format: the task · why, in 2–3 lines · how, as step 1, 2, 3. Nothing else.</li>
+      <li>Not just trim: beef out each day to the full funnel-build process. Day 1 adds vendor contact and prospect data sourcing, funnel choice, webinar topic, date and time. Day 2 is every element in one go: landing pages, outreach templates for every channel, reminders, follow-ups, newsletter and post-webinar sequences. Day 3 is Claude Code orchestration over APIs and MCPs, the dashboard, and the growth experimentation loop (swap a page or template, read the dashboard, keep the winner).</li>
+      <li>Each task gets anonymised examples from the client work trackers: "for a SaaS company", "for a consulting firm", "for a coaching business". Never a brand name.</li>
+      <li>Delete anything that is AI slop without asking. Keep it short; too big is also a failure.</li>
+      <li>Questions go to Slack as they come up, not batched. Repos are shared in the Tantra channel; as of this session the private repo still returns "not found" for nelbinxav, so confirm the invite.</li>
+      <li>Deck, survey, reminders and bonuses all wait on this. The Wednesday session runs even with two attendees.</li>
+    </ul>
+  </article>
+
+  <article class="note">
+    <header><h3>Personalization engine: agreed spec</h3><span class="v FLAG">FLAG</span><span class="tag">Big Hammer</span><span class="tag">T-059</span></header>
+    <ul>
+      <li>Host it permanently. No localhost link; anyone on the team can open it.</li>
+      <li>UI must let the user edit the prompts.</li>
+      <li>Flow: upload CSV → pick one channel (email, cold calendar, LinkedIn, WhatsApp) → paste that channel's template → engine appends scraping-context and AI-personalization columns → CSV goes to HeyReach, Tantra or Instantly as normal merge fields. One channel at a time must work.</li>
+      <li>Add Agent Reach to scraping. Source priority: recent post, no older than 10 days (LinkedIn → X → Facebook → Instagram) → LinkedIn profile → company page → Google News → website, blog, press, podcasts.</li>
+      <li>Add a rate limiter with adjustable rates, to find what does not get blocked.</li>
+      <li>Output must read as human-written. Prompt optimisation is the real work; Richard's feedback is pending.</li>
+      <li>Once live: personalised cold email + LinkedIn campaigns for every connected Big Hammer profile.</li>
+    </ul>
+  </article>
+
+  <article class="note">
+    <header><h3>FintechCircle Claude project: make it loadable by Susani</h3><span class="v FLAG">FLAG</span><span class="tag">FintechCircle</span></header>
+    <ul>
+      <li>Commit the project as a repo. The gap: on another machine Claude explains how to do GHL tasks instead of doing them, because the context is local.</li>
+      <li>Optimise CLAUDE.md and AGENTS.md for a fresh clone.</li>
+      <li>Write the onboarding prompts: download from GitHub, load the project, run two or three setup prompts. Have Claude generate those prompt templates.</li>
+    </ul>
+  </article>
+
+  <article class="note">
+    <header><h3>Not mine, noted for the daily update</h3><span class="v KEEP">KEEP</span></header>
+    <ul>
+      <li>Aquila: GHL tag list with criteria for Big Hammer · WhatsApp reminders run as 1:1 DMs · lead-magnet landing page needs a phone field (check with Tamil) · FintechCircle pipeline-stage reminder automations, draft in the FintechCircle Claude account, Susani approves.</li>
+      <li>Adi: Databricks webinar title changes to "up to 75%" per Sinat, plus title capitalisation.</li>
+    </ul>
+  </article>
+
   <h2>Day 1 checklist, in review order</h2>
   <table>
     <thead><tr><th>Section</th><th>Link</th><th>Verdict</th><th>Note</th></tr></thead>
