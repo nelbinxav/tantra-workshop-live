@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nelbin Task Board</title>
+<meta name="description" content="Checklist of everything assigned to Nelbin for the 3-Day AI RevOps Workshop and Tantra, in the order to do it.">
+<style>
+  :root{--bg:#fafafa;--fg:#161616;--muted:#5d5d5d;--line:#e2e2e2;--card:#fff;--tag:#eef0f3;--now:#b54708;--done:#067647}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111214;--fg:#ececec;--muted:#9a9a9a;--line:#2a2b2e;--card:#18191c;--tag:#232529;--now:#fdb022;--done:#4ade80}}
+  :root[data-theme="dark"]{--bg:#111214;--fg:#ececec;--muted:#9a9a9a;--line:#2a2b2e;--card:#18191c;--tag:#232529;--now:#fdb022;--done:#4ade80}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+  main{max-width:900px;margin:0 auto;padding:32px 16px 64px}
+  h1{font-size:28px;margin:0 0 4px}
+  .sub{color:var(--muted);margin:0 0 8px}
+  .prog{font-size:14px;color:var(--muted);margin:0 0 24px}
+  h2{font-size:19px;margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  h2 small{font-weight:400;color:var(--muted);font-size:14px;margin-left:8px}
+  .t{display:grid;grid-template-columns:24px 1fr;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 8px}
+  .t input{width:18px;height:18px;margin:3px 0 0}
+  .t label{cursor:pointer}
+  .t b{font-weight:600}
+  .t.done label{color:var(--muted);text-decoration:line-through}
+  .t .d{display:block;color:var(--muted);font-size:14.5px;margin-top:3px;text-decoration:none}
+  .t.done .d{display:none}
+  .tag{display:inline-block;font-size:12px;color:var(--muted);background:var(--tag);padding:1px 7px;border-radius:6px;margin-left:6px;vertical-align:middle;text-decoration:none}
+  .now{color:var(--now);font-size:12px;font-weight:600;letter-spacing:.04em;margin-left:6px}
+  a{color:inherit}
+  ol{margin:4px 0 0 18px;padding:0}
+</style>
+</head>
+<body>
+<main>
+  <h1>Nelbin Task Board</h1>
+  <p class="sub">Everything assigned across the 25 Sep call, Adi's Slack brief and the 29 Sep sync. Ordered by what must be true before Day 1 goes live (Wed 30 Sep, 11:00 ET / 20:30 IST). Companion to the <a href="./">review notes</a>.</p>
+  <p class="prog" id="prog"></p>
+
+  <h2>0 · Unblockers <small>do first, each takes minutes</small></h2>
+  <div class="t" id="t01"><input type="checkbox"><label><b>Post GitHub username in Adi's thread and ask for the private-repo invite</b> <span class="tag">T-146</span><span class="d">Username: nelbinxav. Repo still returns "not found" as of 29 Sep. Until it lands, source edits are impossible; review-hub notes are the deliverable.</span></label></div>
+  <div class="t" id="t02"><input type="checkbox"><label><b>Send the Sam message</b> <span class="tag">Growth Idea</span><span class="d">Draft is ready. Ask for template input, prospect list, and which mailboxes, LinkedIn profiles and WhatsApp number to connect. Slowest reply in the whole plan, so it goes out before any review work.</span></label></div>
+  <div class="t" id="t03"><input type="checkbox"><label><b>Flag T-060 and T-040/T-041 as launch blockers in the Tantra thread</b><span class="d">The workshop success page shows a placeholder VSL with an internal caption note, and the script sends attendees to a WhatsApp group that does not exist. Both are the first thing a free-lane attendee sees.</span></label></div>
+
+  <h2>1 · Onboarding centre review <small>the single blocker Adi named · this order</small></h2>
+  <div class="t" id="t11"><input type="checkbox"><label><b>Pre-Day-1 module</b> <span class="now">START HERE</span> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#start-welcome">#start-welcome … #start-overview</a><span class="d">Attendees see this tonight after registering. Anchors: welcome, plan, channel, calendar, setup, foundations, overview. Check every step is doable: calendar added, group joined, accounts listed. Anything that is theory stays under three lines.</span></label></div>
+  <div class="t" id="t12"><input type="checkbox"><label><b>Day 1 module</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#m-day1">#m-day1</a><span class="d">Title "Decide What You Sell, and Who To" is the slop Adi flagged. Must cover, as task → why → steps: offer and positioning, value equation, buyer persona, prospect list and data vendors, funnel choice, webinar topic/date/time, channel connections plus Cloudflare API. One anonymised example per task (SaaS, consulting, coaching).</span></label></div>
+  <div class="t" id="t13"><input type="checkbox"><label><b>Mechanism picker</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#d1-mechanism">#d1-mechanism</a><span class="d">Three options: webinar, reverse squeeze page, challenge. One line each on when to pick it, then the choice. No essay.</span></label></div>
+  <div class="t" id="t14"><input type="checkbox"><label><b>Playbook Day 1, value equation</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/playbook.html#d1">playbook #d1</a><span class="d">Currently a diagram only. Needs numbered steps: score each factor, write the offer sentence, test it against the persona.</span></label></div>
+  <div class="t" id="t15"><input type="checkbox"><label><b>Guide S1 overview</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#g-s1-overview">#g-s1-overview</a></label></div>
+  <div class="t" id="t16"><input type="checkbox"><label><b>Guide S1 cold calendar</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#g-s1-cold-calendar">#g-s1-cold-calendar</a><span class="d">Check against what Tantra actually does: create is the send, balanced distribution, webinar linked at create.</span></label></div>
+  <div class="t" id="t17"><input type="checkbox"><label><b>Guide S1 cold email</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#g-s1-cold-email">#g-s1-cold-email</a></label></div>
+  <div class="t" id="t18"><input type="checkbox"><label><b>Guide S1 LinkedIn</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#g-s1-linkedin">#g-s1-linkedin</a></label></div>
+  <div class="t" id="t19"><input type="checkbox"><label><b>Post the Day 1 batch in the thread</b><span class="d">Review-hub task IDs plus the notes link. Aquila starts her pass from this. Do not wait for Day 2.</span></label></div>
+  <div class="t" id="t1a"><input type="checkbox"><label><b>Day 2, stage 1 outreach templates</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#m-day2">#m-day2 · #d2-stage-1</a><span class="d">Every channel's template as a task with steps and an anonymised example. Thursday's session.</span></label></div>
+  <div class="t" id="t1b"><input type="checkbox"><label><b>Playbook intro chapters</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/playbook.html#start">#start · #revops · #whyfunnel · #funnels · #bigpic</a><span class="d">Lowest urgency. Mostly theory, so mostly CUT.</span></label></div>
+  <div class="t" id="t1c"><input type="checkbox"><label><b>Day 3 in my scope: growth experimentation loop</b> <a class="tag" href="https://nelbinxav.github.io/tantra-workshop-live/site/onboarding/#m-day3">#m-day3</a><span class="d">Swap a template or page, read the dashboard, keep the winner. Added by Adi on 29 Sep. Friday's session.</span></label></div>
+
+  <h2>2 · Personalization engine <small>Big Hammer · T-059</small></h2>
+  <div class="t" id="t21"><input type="checkbox"><label><b>Host the engine permanently</b><span class="d">No localhost. Any teammate opens a URL. Enable Claude and OpenAI OAuth using Adi's prompt doc.</span></label></div>
+  <div class="t" id="t22"><input type="checkbox"><label><b>Prompts editable in the UI</b><span class="d">Per channel. This is where Richard's feedback gets applied.</span></label></div>
+  <div class="t" id="t23"><input type="checkbox"><label><b>One channel at a time, cold calendar added</b><span class="d">Upload CSV → pick channel → paste template → engine appends context and personalization columns → export for HeyReach, Tantra or Instantly.</span></label></div>
+  <div class="t" id="t24"><input type="checkbox"><label><b>Agent Reach in scraping, with source priority</b><span class="d">Recent post ≤10 days (LinkedIn → X → Facebook → Instagram) → LinkedIn profile → company page → Google News → website, blog, press, podcasts. Profile and company page scrapes currently fail; this is the fix.</span></label></div>
+  <div class="t" id="t25"><input type="checkbox"><label><b>Adjustable rate limiter</b><span class="d">Find the rate that does not get blocked.</span></label></div>
+  <div class="t" id="t26"><input type="checkbox"><label><b>10-row Big Hammer test across email, LinkedIn, WhatsApp</b><span class="d">Output must read as human-written. Richard reviews, then iterate on prompts.</span></label></div>
+  <div class="t" id="t27"><input type="checkbox"><label><b>Launch personalised campaigns for all connected Big Hammer profiles</b><span class="d">Cold email via Tantra, LinkedIn via HeyReach, WhatsApp via Tantra.</span></label></div>
+
+  <h2>3 · Client rollout and billing <small>overdue for the Alex call · target 5 live clients</small></h2>
+  <div class="t" id="t31"><input type="checkbox"><label><b>Billing sheet</b><span class="d">Rows: GrowthIdea, Bighammer, Fintech, Sign.online (after week 2 of campaigns), NeuralIT, POW Media (Glenn), Ajit at cavliwireless.com, Kiran. Columns: plan, price, owner, status, last touch, next step. Per client: WhatsApp message → email pitch → calls until they pay.</span></label></div>
+  <div class="t" id="t32"><input type="checkbox"><label><b>Big Hammer: cold calendar, cold email, WhatsApp on Tantra</b><span class="d">LinkedIn stays on HeyReach. $99 cold calendar plan.</span></label></div>
+  <div class="t" id="t33"><input type="checkbox"><label><b>FintechCircle: tell Susani, move to Tantra</b><span class="d">Not the $79 seat. Our cost about $5.50 per account.</span></label></div>
+  <div class="t" id="t34"><input type="checkbox"><label><b>NeuralIT: check webinar status, then state the plan</b><span class="d">No permission ask. List what we need, take over accounts, launch after billing.</span></label></div>
+  <div class="t" id="t35"><input type="checkbox"><label><b>Sign.online: LinkedIn + WhatsApp first, two-week trial</b><span class="d">Cold email only if their infra allows. No calendar.</span></label></div>
+  <div class="t" id="t36"><input type="checkbox"><label><b>Growth Idea: set up and launch after Sam's inputs</b><span class="d">All four channels. Monitor and report weekly.</span></label></div>
+  <div class="t" id="t37"><input type="checkbox"><label><b>Post per-client campaign links in the Tantra channel</b></label></div>
+
+  <h2>4 · FintechCircle <small>after the workshop week</small></h2>
+  <div class="t" id="t41"><input type="checkbox"><label><b>Commit the FintechCircle Claude project as a repo</b><span class="d">Tune CLAUDE.md and AGENTS.md for a fresh clone. Have Claude write the 2–3 setup prompts Susani runs after cloning, so it does GHL tasks instead of explaining them.</span></label></div>
+  <div class="t" id="t42"><input type="checkbox"><label><b>Content engine: context bucket + weekly flow</b><span class="d">15 samples from the creator taxonomy sheet, 60% carousels / 40% images, ideas from the bucket plus Susani's, post copy plus media. Blocked on: taxonomy sheet, FintechCircle repo.</span></label></div>
+  <div class="t" id="t43"><input type="checkbox"><label><b>Funnel orchestration: every MCP and API in the FintechCircle Claude account, including GHL</b></label></div>
+  <div class="t" id="t44"><input type="checkbox"><label><b>Document how the weekly dashboard is built</b> <span class="tag">T-158 · T-062</span><span class="d">Gather all Claude Code context and the latest version; goes into the playbook Day 3.</span></label></div>
+
+  <h2>5 · Automations, with Aquila <small>after the workshop week</small></h2>
+  <div class="t" id="t51"><input type="checkbox"><label><b>One streamlined workflow per automation, two install routes</b> <span class="tag">T-087 · T-033 · T-120 · T-139</span><span class="d">GHL snapshot, or Claude Code + Cloudflare Workers. n8n dropped. Covers traffic, landing, webinar, reminders and nurture (email, WhatsApp, SMS), CRM pipeline, post-webinar engine (52+ messages, AI newsletter). Blocked on: Workers repo, GHL snapshot, Adi's n8n post.</span></label></div>
+
+  <h2>6 · Command centre and reporting <small>daily</small></h2>
+  <div class="t" id="t61"><input type="checkbox"><label><b>Clear the "waiting on us" items</b> <span class="tag">T-120 · T-133 · T-134 · T-137 · T-139</span> <a class="tag" href="https://adisuja.github.io/tantra-workshop-live/tasks.html">tasks.html</a></label></div>
+  <div class="t" id="t62"><input type="checkbox"><label><b>Daily update in the Tantra channel</b> <span class="tag">T-151 · T-152</span><span class="d">Five areas plus campaign issues. Post even when nothing moved. Push Aquila; Adi will not follow up.</span></label></div>
+</main>
+<script>
+(function(){
+  var key='nelbin-task-board';
+  var saved={};
+  try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+  var boxes=document.querySelectorAll('.t input');
+  function paint(){
+    var n=0;
+    boxes.forEach(function(b){var t=b.closest('.t');if(b.checked){n++;t.classList.add('done')}else{t.classList.remove('done')}});
+    document.getElementById('prog').textContent=n+' of '+boxes.length+' done';
+  }
+  boxes.forEach(function(b){
+    var t=b.closest('.t');
+    if(saved[t.id]) b.checked=true;
+    b.addEventListener('change',function(){
+      saved[t.id]=b.checked?1:0;
+      try{localStorage.setItem(key,JSON.stringify(saved))}catch(e){}
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
